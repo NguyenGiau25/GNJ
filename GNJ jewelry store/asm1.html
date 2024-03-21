@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ước mơ làm giàu</title>
+    <link rel="stylesheet" href="asm1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="swapper">
+        <div class="header">
+            <div class="header_logo">
+                <div>
+                    <div class="name">GNJ STORE</div>
+                    <div class="slogan">Vẻ đẹp quý phái - Xứng tầm đẳng cấp</div>
+                </div>
+                <div class="logo">
+                    <img src="../asm1/logo1.png" />
+                </div>
+                <div class="header-right">
+                    <div class="giohang">
+                        <button onclick="showhide();"> Giỏ hàng (<span id="countcart"></span>)</button>
+                    </div>
+                    <div id="giohang" class="giohang">
+                        <table border="1" id="cart">
+                            <tr>
+                                <th>STT </th>
+                                <th>Hình </th>
+                                <th>Tên SP </th>
+                                <th>Đơn giá </th>
+                                <th>Số lượng </th>
+                                <th>Thành tiền </th>
+                            </tr>
+                            <tbody id="mycart">
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="header-right">
+                    <i class="fa-regular fa-clock"></i>
+                    <a href="asmform.html">Tài khoản</a>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div>
+                <a href="asm1.html">Trang chủ</a>
+            </div>
+            <div class="base-menu1">
+                <a href="#">Trang sức bạc</a>
+                <div class="menu-mini1">
+                    <a href="d1.html">Nhẫn</a><br>
+                    <a href="d2.html">Lắc tay</a><br>
+                    <a href="d3.html">Bông tai</a><br>
+                    <a href="d4.html">Dây chuyền</a><br>
+                </div>
+            </div>
+            <div class="base-menu2">
+                <a href="#">Trang sức vàng</a>
+                <div class="menu-mini2">
+                    <a href="#">Nhẫn</a><br>
+                    <a href="#">Lắc tay</a><br>
+                    <a href="#">Bông tai</a><br>
+                    <a href="#">Dây chuyền</a><br>
+                </div>
+            </div>
+            <div class="base-menu3">
+                <a href="#">Đồng hồ</a>
+                <div class="menu-mini3">
+                    <a href="#">Casio</a><br>
+                    <a href="#">Citizen</a><br>
+                    <a href="#">Orient</a><br>
+                    <a href="#">Skagen</a><br>
+                </div>
+            </div>
+            <div class="base-menu4">
+                <a href="#">Quà tặng</a>
+                <div class="menu-mini4">
+                    <a href="#">Cho bé</a><br>
+                    <a href="#">Cho nàng</a><br>
+                    <a href="#">Cho chàng</a><br>
+                    <a href="#">Cho ba mẹ</a><br>
+                </div>
+            </div>
+            <div>
+                <input type="text" name="search" placeholder="Tìm kiếm nhanh">
+            </div>
+        </div>
+        <div class="content">
+            <img id="img" onclick="changeimg()" src="../asm1/daitiec.jpg">
+        </div>
+        <script>
+            var index = 1;
+            changeimg = function () {
+                var imgs = ["daitiec.jpg", "bannernew2.jpg", "banner2.jpg", "banner4.jpg", "banner6.jpg"];
+                document.getElementById('img').src = imgs[index];
+                index++;
+                if (index == 5) {
+                    index = 0;
+                }
+            }
+            setInterval(changeimg, 2000);
+        </script>
+        <div class="text-left1">Sản phẩm bán chạy</div>
+        <div class="content-center">
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/sp1.png" alt="" />
+                </div>
+                <div class="product-name">Dây chuyền bạc GNJ</div>
+                <div class="product-price"><span> 325000</span></div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/sp2.png" alt="" />
+                </div>
+                <div class="product-name">Bông tai bạc GNJ</div>
+                <div class="product-price"><span>520000</span></div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/sp3.png" alt="" />
+                </div>
+                <div class="product-name">Lắc tay bạc GNJ</div>
+                <div class="product-price"><span>745000</span></div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/sp5.png" alt="" />
+                </div>
+                <div class="product-name">Lắc tay vàng GNJ</div>
+                <div class="product-price"> <span>5425000</span></div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/sp7.png" alt="" />
+                </div>
+                <div class="product-name">Nhẫn vàng trắng GNJ</div>
+                <div class="product-price"><span>3440000</span></div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+        </div>
+        <div class="text-left1">Sản phẩm mới</div>
+        <div class="content-center">
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/sp1.png" alt="" />
+                </div>
+                <div class="product-name">Vòng tay vàng Disney </div>
+                <div class="product-price"> <span>12450000</span></div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm2.png" alt="" />
+                </div>
+                <div class="product-name">Dây chuyền bạc GNJ</div>
+                <div class="product-price"> <span>870000</span> </div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm3.png" />
+                </div>
+                <div class="product-name">Bông tai vàng Disney</div>
+                <div class="product-price"> 6.100.000 ₫ </div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm4.png" />
+                </div>
+                <div class="product-name">Lắc tay vàng trắng</div>
+                <div class="product-price"> 13.990.000 ₫ </div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm5.png" />
+                </div>
+                <div class="product-name">Nhẫn bạc GNJ</div>
+                <div class="product-price"> 440.000 ₫ </div>
+                <button class="chiTiet" onclick="addcart(this)">
+                    <i class="fa-solid fa-basket-shopping"></i><a>Đặt hàng</a></button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm6.png" />
+                </div>
+                <div class="product-name">Lắc tay vàng Disney</div>
+                <div class="product-price"> 8.440.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm7.png" />
+                </div>
+                <div class="product-name">Nhẫn bạc GNJ</div>
+                <div class="product-price"> 640.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm8.png" />
+                </div>
+                <div class="product-name">Nhẫn bạc GNJ</div>
+                <div class="product-price"> 950.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm9.png" />
+                </div>
+                <div class="product-name">Lắc tay bạc GNJ</div>
+                <div class="product-price"> 1.550.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/spm10.png" />
+                </div>
+                <div class="product-name">Dây chuyền bạc GNJ</div>
+                <div class="product-price">1.050.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="banner">
+                <img src="../asm1/banner6.jpg">
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/y1.png" />
+                </div>
+                <div class="product-name">Nhẫn vàng trắng Ý </div>
+                <div class="product-price">3.350.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/y2.png" />
+                </div>
+                <div class="product-name">Bông tai vàng Ý</div>
+                <div class="product-price"> 1.150.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/y3.png" />
+                </div>
+                <div class="product-name">Bông tai kim tiền vàng Ý</div>
+                <div class="product-price"> 6.030.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/y4.png" />
+                </div>
+                <div class="product-name">Nhẫn vàng trắng Ý </div>
+                <div class="product-price"> 2.640.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/y5.png" />
+                </div>
+                <div class="product-name">Lắc tay vàng trắng Ý </div>
+                <div class="product-price"> 8.860.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="banner">
+                <img src="../asm1/bannernew1.jpg">
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/q1.png" />
+                </div>
+                <div class="product-name">Nhẫn vàng đính đá Citrine </div>
+                <div class="product-price">3.780.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/q2.png" />
+                </div>
+                <div class="product-name">Dây chuyền đính đá Citrine</div>
+                <div class="product-price"> 5.780.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/q3.png" />
+                </div>
+                <div class="product-name">Dây chuyền đính đá Ruby</div>
+                <div class="product-price"> 36.730.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/q4.png" />
+                </div>
+                <div class="product-name">Nhẫn vàng đính đá Ruby </div>
+                <div class="product-price"> 12.780.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="../asm1/q5.png" />
+                </div>
+                <div class="product-name">Dây chuyền đính đá Topaz </div>
+                <div class="product-price"> 6.915.000 ₫ </div>
+                <div>
+                    <button class="chiTiet"><i class="fa-solid fa-basket-shopping"></i> Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <iframe width="1240" height="450" src="https://www.youtube.com/embed/SX3lhGOzgU4"
+                title="PNJ TUNG CLIP HÉ LỘ NHỮNG TUYỆT TÁC TRANG SỨC TRONG BIG SHOW  “A MAGICAL JOURNEY"" frameborder="
+                0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div class="footer">
+            <div class="anh"><img src="../asm1/logo1.png"></div>
+            <div class="hotline">
+                <a> Gọi mua hàng :1800 9898</a><br><br>
+                <a>Gọi bảo hành :1800 7575</a><br><br>
+                <a>Gọi khiếu nại:1800 8787</a><br><br>
+            </div>
+            <div class="support">
+                <a>Tra cứu đơn hàng</a><br><br>
+                <a>Chính sách bảo hành</a><br><br>
+                <a>Phương thức trả góp</a><br><br>
+            </div>
+            <div class="quisle">
+                <a>Liên hệ hợp tác kinh doanh</a><br><br>
+                <a>Ưu đãi từ đối tác</a><br><br>
+                <a>Tuyển dụng</a><br><br>
+            </div>
+            <div class="address">
+                <a>Địa chỉ: Số 250 Nguyễn Văn Khối, P11 , Gò Vấp , TP.HCM</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        //mặc định giỏ hàng bị ẩn;
+        document.getElementById("giohang").style.display = "none";
+        //hàm showhide
+        function showhide(button) {
+            var x = document.getElementById("giohang");
+            x.style.display = x.style.display == "block" ? "none" : "block";
+        }
+        var giohang = [];
+        function addcart(x) {
+            var pa = x.parentNode;
+            var hinh = pa.children[0].children[0].src;
+            var tensp = pa.children[1].innerText;
+            var gia = pa.children[2].children[0].innerText;
+            
+            var sl = 1;
+            var flag = 0;
+            //kiểm tra xem có tên sản phẩm trong giỏ chưa???
+            for (var i = 0; i < giohang.length; i++) {
+                if (tensp == giohang[i][1]) {
+                    giohang[i][3] += 1;
+                    flag = 1;
+                }
+            }
+            //khi chưa có sp trong giỏ hàng
+            if (flag == 0) {
+                item = [hinh, tensp, gia, sl];
+                giohang.push(item);
+            }
+            //xuất ra trong console log
+            console.log(giohang);
+            //xuất ra trong bảng giỏ hàng
+            document.getElementById("mycart").innerHTML = showcart();
+        }
+        //show hàng
+        function showcart() {
+            var kq = "";
+            var tongtien = 0;
+            var tongsl = 0;
+            for (var i = 0; i < giohang.length; i++) {
+                kq += `<tr>
+                    <td>${i + 1}</td>
+                    <td><img src="${giohang[i][0]}"/></td>
+                    <td>${giohang[i][1]}</td>
+                    <td>${giohang[i][2]}</td>
+                    <td>${giohang[i][3]}</td>
+                    <td>${giohang[i][2] * giohang[i][3]}</td>
+                    </tr>`
+                //tính tổng tiền
+                tongtien += giohang[i][2] * giohang[i][3];
+                tongsl += giohang[i][3];
+            }
+            kq += `<tr>
+                <th colspan = 5>Tổng tiền</th>
+                <th>${tongtien}</th>
+                </tr>`;
+            document.getElementById("countcart").innerText = tongsl;
+            return kq;
+        }
+    </script>
+</body>
+
+</html>
